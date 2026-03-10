@@ -1,7 +1,7 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { AboutSection } from "@/components/home/AboutSection";
-import { CommunitySection } from "@/components/home/CommunitySection";
 import { SocialSection } from "@/components/home/SocialSection";
+import { CommunitySection } from "@/components/home/CommunitySection";
 
 export default function Home() {
   return (
@@ -10,10 +10,10 @@ export default function Home() {
       <HeroSection />
       {/* Brand story / about */}
       <AboutSection />
-      {/* Community + merch preview */}
-      <CommunitySection />
       {/* Social proof and socials */}
       <SocialSection />
+      {/* Community + merch preview */}
+      <CommunitySection />
     </>
   );
 }

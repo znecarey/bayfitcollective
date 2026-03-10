@@ -17,7 +17,7 @@ export function CommunitySection() {
         </div>
         <div className="relative aspect-[16/5] w-full overflow-hidden">
           <Image
-            src="/images/joinBayFit.png"
+            src="/images/jointhecollective.png"
             alt="Bay Fit Collective community"
             fill
             className="object-cover object-center"
