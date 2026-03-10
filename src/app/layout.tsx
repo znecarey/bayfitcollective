@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Bay Fit Collective",
   description:
     "Bay Fit Collective is a community-driven fitness and wellness collective in the Bay Area.",
+  icons: {
+    icon: "/images/BayFitBlack.png",
+  },
 };
 
 export default function RootLayout({
