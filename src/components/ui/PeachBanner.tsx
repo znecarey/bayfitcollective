@@ -19,7 +19,7 @@ export function PeachBanner({
 
   return (
     <section
-      className={`w-full bg-[--color-peach] py-10 sm:py-14 ${className ?? ""}`}
+      className={`w-full bg-green-500 py-10 sm:py-14 ${className ?? ""}`}
     >
       {showTitleBlock ? (
         <Container>

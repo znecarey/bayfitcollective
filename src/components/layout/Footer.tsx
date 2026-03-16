@@ -5,7 +5,7 @@ import { FOOTER_COPY, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="mt-16 bg-black py-[35px] text-white">
+    <footer className="mt-0 bg-black py-[48px] text-white">
       <Container className="flex flex-col items-center justify-between gap-6 sm:flex-row">
         <div className="flex items-center gap-3">
           <div className="relative h-9 w-12">

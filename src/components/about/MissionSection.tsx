@@ -3,8 +3,8 @@ import { Container } from "../ui/Container";
 
 export function MissionSection() {
   return (
-    <section className="bg-white py-14 sm:py-18">
-      <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+    <section className="bg-white py-14 sm:py-18 border-b border-black/10">
+      <Container className="grid gap-10 lg:grid-cols-2">
         <div className="flex flex-col gap-4">
           <h1 className="heading-font text-3xl font-normal uppercase tracking-[0.15em] text-black sm:text-4xl md:text-5xl">
             Our Mission
@@ -29,12 +29,12 @@ export function MissionSection() {
           </p>
         </div>
 
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-black/5">
+        <div className="relative mx-auto aspect-[4.55/5] w-full max-w-lg overflow-hidden rounded-2xl border border-black/5 bg-gray-100 lg:mx-0 lg:max-w-md">
           <Image
-            src="/images/FullSizeRender.png"
+            src="/images/about us.png"
             alt="Bay Fit Collective team and community"
             fill
-            className="object-cover"
+            className="object-cover object-[80%_100%]"
             sizes="(min-width: 1024px) 640px, 100vw"
           />
         </div>

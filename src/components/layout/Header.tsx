@@ -24,12 +24,12 @@ export function Header() {
               priority
             />
           </div>
-          <span className="heading-font hidden text-xs font-normal uppercase tracking-[0.25em] text-white sm:inline-block">
+          <span className="heading-font hidden text-2xl font-normal uppercase tracking-[0.21em] text-white sm:inline-block">
             Bay Fit Collective
           </span>
         </Link>
 
-        <nav className="heading-font hidden items-center gap-8 text-xs font-normal uppercase tracking-[0.22em] text-white sm:flex">
+        <nav className="heading-font hidden items-center gap-x-12 text-base font-normal uppercase tracking-[0.22em] text-white sm:flex">
           {NAV_LINKS.map((link) => {
             const active =
               link.href === "/"
@@ -55,7 +55,7 @@ export function Header() {
           type="button"
           aria-label="Toggle navigation"
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-xs font-semibold uppercase tracking-[0.18em] text-white sm:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-base font-semibold uppercase tracking-[0.18em] text-white sm:hidden"
         >
           {open ? "Close" : "Menu"}
         </button>
@@ -64,7 +64,7 @@ export function Header() {
       {open ? (
         <div className="border-t border-white/10 bg-black sm:hidden">
           <div className="px-6 py-3 sm:px-8 lg:px-10">
-            <nav className="flex flex-col gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white">
+            <nav className="flex flex-col gap-3 text-base font-semibold uppercase tracking-[0.22em] text-white">
               {NAV_LINKS.map((link) => {
                 const active =
                   link.href === "/"

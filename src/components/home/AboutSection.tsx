@@ -4,9 +4,9 @@ import { BRAND_MOTTO } from "@/lib/constants";
 
 export function AboutSection() {
   return (
-    <section className="bg-[#b8b8b8] py-16 sm:py-20">
-      <Container className="flex flex-col items-center gap-6 text-center text-white">
-        <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/80">
+    <section className="bg-transparent py-16 sm:py-20">
+      <Container className="flex flex-col items-center gap-6 text-center text-black">
+        <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-black/80">
           <div className="relative h-5 w-8 shrink-0 sm:h-6 sm:w-10">
             <Image
               src="/images/BayFitBlack.png"
@@ -41,7 +41,7 @@ export function AboutSection() {
             We&apos;re building stronger people and a stronger community.
           </p>
         </div>
-        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-black/80">
           {BRAND_MOTTO}
         </p>
       </Container>

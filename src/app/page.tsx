@@ -1,15 +1,12 @@
-import { HeroSection } from "@/components/home/HeroSection";
-import { AboutSection } from "@/components/home/AboutSection";
+import { HeroMissionWrapper } from "@/components/home/HeroMissionWrapper";
 import { SocialSection } from "@/components/home/SocialSection";
 import { CommunitySection } from "@/components/home/CommunitySection";
 
 export default function Home() {
   return (
     <>
-      {/* Home hero */}
-      <HeroSection />
-      {/* Brand story / about */}
-      <AboutSection />
+      {/* Home hero + mission with shared gradient */}
+      <HeroMissionWrapper />
       {/* Social proof and socials */}
       <SocialSection />
       {/* Community + merch preview */}
