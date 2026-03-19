@@ -7,7 +7,7 @@ export function AboutSection() {
     <section className="bg-transparent py-16 sm:py-20">
       <Container className="flex flex-col items-center gap-4 text-center text-white">
         <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white -mt-12">
-          <div className="relative h-5 w-8 shrink-0 sm:h-6 sm:w-10">
+          <div className="relative h-5 w-8 shrink-0 translate-y-4 sm:h-6 sm:w-10">
             <Image
               src="/images/BayFitBlack.png"
               alt="Bay Fit Collective"
@@ -16,7 +16,7 @@ export function AboutSection() {
               sizes="40px"
             />
           </div>
-          <span className="heading-font">
+          <span className="heading-font translate-y-4">
             Where community meets wellness, movement, and creates amazing
             experiences.
           </span>

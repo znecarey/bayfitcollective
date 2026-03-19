@@ -11,7 +11,7 @@ export function HeroMissionWrapper() {
         alt="Bay Fit Collective atmospheric background"
         quality={95}
         priority
-        strength={0.25}
+        strength={0.32}
         minWidthPx={768}
       />
 

@@ -1,12 +1,41 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 
+/**
+ * Partnership banner vertical padding (px), applied to top AND bottom of the inner row.
+ * This always changes how tall the strip feels (unlike min-height, which cannot shrink
+ * below the logos + text).
+ *
+ * Optional: set a minimum total block height — only adds space when content is shorter.
+ */
+const PARTNERSHIP_BANNER_PADDING_Y_PX = 8;
+const PARTNERSHIP_BANNER_MIN_HEIGHT_PX: number | undefined = undefined; // e.g. 112 to force a taller band
+
 export function SocialSection() {
+  const partnershipBannerStyle: CSSProperties = {
+    ...(PARTNERSHIP_BANNER_MIN_HEIGHT_PX != null
+      ? { minHeight: `${PARTNERSHIP_BANNER_MIN_HEIGHT_PX}px` }
+      : {}),
+  };
+
   return (
     <section className="-mt-px w-full bg-white text-black">
       {/* Partnerships banner directly under \"TOGETHER. WE. CLIMB.\" */}
-      <div className="border-b border-black/10 bg-[#f5f5f5]">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-8 px-6 py-5 sm:justify-between">
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 flex-1">
+      <div
+        className="flex items-center border-b border-black/10 bg-[#ffffff]"
+        style={partnershipBannerStyle}
+      >
+        <div
+          className="mx-auto flex w-full max-w-9xl flex-col flex-wrap items-center justify-center gap-4 px-6 sm:flex-row sm:justify-between sm:gap-8"
+          style={{
+            paddingTop: PARTNERSHIP_BANNER_PADDING_Y_PX,
+            paddingBottom: PARTNERSHIP_BANNER_PADDING_Y_PX,
+          }}
+        >
+          <p className="heading-font translate-x-[60px] translate-y-[5px] text-center text-sm font-normal uppercase tracking-[0.1em] text-black sm:shrink-0 sm:text-left md:text-base">
+            <em className="italic">Built with brands that move with us</em>
+          </p>
+          <div className="flex flex-1 flex-wrap items-center justify-center gap-8 sm:gap-10">
             {[
               "/images/partner1 copy.png",
               "/images/partner2 copy.png",
