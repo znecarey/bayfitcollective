@@ -5,22 +5,23 @@ import { AboutSection } from "./AboutSection";
 export function HeroMissionWrapper() {
   return (
     <section className="relative w-screen overflow-hidden">
-      {/* Aura gradient background covering left half of hero area */}
-      <div className="pointer-events-none absolute left-0 top-0 -z-10 h-[calc(100vh-4.5rem)] w-1/2 sm:w-1/2">
+      {/* Shared background image behind hero + mission sections */}
+      <div className="pointer-events-none absolute inset-0 z-0">
         <Image
-          src="/images/background-hero-mission.png"
-          alt="Bay Fit Collective gradient background"
+          src="/images/home-heroimagefinal.png"
+          alt="Bay Fit Collective atmospheric background"
           fill
-          className="object-cover object-[35%_20%]"
+          className="object-cover object-center"
           sizes="100vw"
+          quality={95}
           priority
         />
       </div>
-      {/* Very subtle dark overlay for readability */}
-      <div className="pointer-events-none absolute inset-0 -z-5 bg-black/15" />
 
-      <HeroSection />
-      <AboutSection />
+      <div className="relative z-20">
+        <HeroSection />
+        <AboutSection />
+      </div>
     </section>
   );
 }

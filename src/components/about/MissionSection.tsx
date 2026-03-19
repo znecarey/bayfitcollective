@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "../ui/Container";
+import { AboutSlideshow } from "./AboutSlideshow";
 
 export function MissionSection() {
   return (
@@ -29,15 +30,18 @@ export function MissionSection() {
           </p>
         </div>
 
-        <div className="relative mx-auto aspect-[4.55/5] w-full max-w-lg overflow-hidden rounded-2xl border border-black/5 bg-gray-100 lg:mx-0 lg:max-w-md">
-          <Image
-            src="/images/about us.png"
-            alt="Bay Fit Collective team and community"
-            fill
-            className="object-cover object-[80%_100%]"
-            sizes="(min-width: 1024px) 640px, 100vw"
-          />
-        </div>
+        <AboutSlideshow
+          slides={[
+            { src: "/images/about us.png", alt: "Bay Fit Collective" },
+            // Placeholder slides; can be replaced/expanded with real photos
+            { src: "/images/about-2.png", alt: "Bay Fit Trap Yoga" },
+            { src: "/images/about-3.png", alt: "Bay Fit Trap Yoga" },
+            { src: "/images/about-4.png", alt: "Bay Fit Trap Yoga" },
+            { src: "/images/about-5.png", alt: "Bay Fit Trap Yoga" },
+            { src: "/images/about-6.png", alt: "Bay Fit Trap Yoga" },
+            { src: "/images/about-7.png", alt: "Bay Fit Trap Yoga" }
+          ]}
+        />
       </Container>
     </section>
   );

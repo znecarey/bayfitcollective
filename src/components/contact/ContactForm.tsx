@@ -101,10 +101,10 @@ export function ContactForm() {
           <div className="space-y-2 text-sm text-black/80">
             <p className="font-semibold">Email</p>
             <a
-              href="mailto:hello@bayfitcollective.com"
+              href="mailto:bayfitco@gmail.com"
               className="text-black underline underline-offset-4"
             >
-              hello@bayfitcollective.com
+              bayfitco@gmail.com
             </a>
           </div>
         </aside>

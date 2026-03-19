@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/Button";
-import { BRAND_MOTTO } from "@/lib/constants";
 
 export function HeroSection() {
   return (
@@ -10,12 +9,12 @@ export function HeroSection() {
         {/* Left content column over shared gradient background */}
         <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden bg-transparent sm:min-h-[340px] md:min-h-[380px] lg:min-h-[calc(100vh-4.5rem)]">
           <div className="relative z-10 flex flex-col gap-5 px-6 py-10 sm:px-8 sm:py-12 lg:py-14 lg:pr-8 lg:pl-[max(1.5rem,4vw)] xl:pl-[max(2rem,5vw)]">
-            <h1 className="heading-font text-8xl font-bold uppercase leading-[1] tracking-[0.02em] text-black sm:text-8xl md:text-9xl lg:text-9xl xl:text-9xl 2xl:text-[7.5rem]">
+            <h1 className="heading-font text-7xl font-bold uppercase leading-[1] tracking-[0.02em] text-black sm:text-7xl md:text-8xl lg:text-8xl xl:text-8xl 2xl:text-[6.5rem]">
+              <span className="block">Together</span>
               <span className="block">We</span>
               <span className="block">Climb</span>
-              <span className="block">Together</span>
             </h1>
-            <p className="max-w-sm text-base leading-relaxed text-black sm:text-lg sm:leading-[1.6] lg:text-[1.25rem] xl:text-[1.4375rem]">
+            <p className="max-w-sm text-base font-semibold leading-relaxed text-black sm:text-lg sm:leading-[1.6] lg:text-[1.25rem] xl:text-[1.4375rem]">
               We create experiences where movement, culture, fitness, and
               community meet together.
             </p>
@@ -28,14 +27,11 @@ export function HeroSection() {
               <Link
                 href="/calendar"
                 aria-label="View upcoming events"
-                className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[--color-peach] text-xl shadow-md transition-colors hover:bg-[#ff7b55] sm:h-12 sm:w-12"
+                className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white bg-[--color-peach] text-xl text-white shadow-md transition-colors hover:bg-white hover:text-black sm:h-12 sm:w-12"
               >
                 📅
               </Link>
             </div>
-            <p className="mt-2 text-base font-semibold uppercase tracking-[0.3em] text-black/80">
-              TOGETHER. WE. CLIMB.
-            </p>
           </div>
         </div>
 

@@ -34,11 +34,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: "Strava",
-    href: "https://www.strava.com/clubs",
+    href: "https://strava.app.link/doP2h1wKy1b",
   },
   {
     label: "Email",
-    href: "mailto:hello@bayfitcollective.com",
+    href: "mailto:bayfitco@gmail.com",
   },
   {
     label: "FAQs",

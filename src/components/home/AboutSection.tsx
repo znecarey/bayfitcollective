@@ -5,8 +5,8 @@ import { BRAND_MOTTO } from "@/lib/constants";
 export function AboutSection() {
   return (
     <section className="bg-transparent py-16 sm:py-20">
-      <Container className="flex flex-col items-center gap-6 text-center text-black">
-        <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-black/80">
+      <Container className="flex flex-col items-center gap-4 text-center text-white">
+        <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white -mt-12">
           <div className="relative h-5 w-8 shrink-0 sm:h-6 sm:w-10">
             <Image
               src="/images/BayFitBlack.png"
@@ -21,7 +21,7 @@ export function AboutSection() {
             experiences.
           </span>
         </div>
-        <div className="max-w-4xl space-y-4 text-[1.25rem] leading-relaxed sm:text-[1.4375rem]">
+        <div className="mt-8 max-w-5xl space-y-4 text-[1.25rem] font-semibold leading-relaxed text-white sm:text-[1.4375rem]">
           <p>
             Bay Fit Collective is a community-driven fitness and wellness
             organization rooted in the belief that movement brings people
@@ -41,8 +41,8 @@ export function AboutSection() {
             We&apos;re building stronger people and a stronger community.
           </p>
         </div>
-        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-black/80">
-          {BRAND_MOTTO}
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-white">
+          TOGETHER. WE. CLIMB.
         </p>
       </Container>
     </section>

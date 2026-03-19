@@ -5,16 +5,16 @@ import { Button } from "../ui/Button";
 
 const products = [
   {
-    name: "BF Heavyweight Tee",
-    description: "Relaxed fit tee for workouts & hangs.",
+    name: "BF Active Long Sleeve",
+    description: "All-day active long sleeve for workouts & movement.",
   },
   {
-    name: "Together We Climb Crew",
-    description: "Cozy crewneck for early morning sessions.",
+    name: "BF Active Short Sleeve",
+    description: "Lightweight short sleeve built for sweat and sessions.",
   },
   {
     name: "Bay Fit Cap",
-    description: "Everyday cap for sun, sweat, and style.",
+    description: "Everyday cap for sun, sweat, and style on the go.",
   },
 ];
 

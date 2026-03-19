@@ -1,7 +1,7 @@
- "use client";
+"use client";
 
 import { useState } from "react";
-import { PeachBanner } from "../ui/PeachBanner";
+import { Container } from "../ui/Container";
 
 const faqs = [
   {
@@ -35,13 +35,13 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <PeachBanner title="" className="mt-0">
-      <div className="flex flex-col gap-6">
-        <h2 className="heading-font text-3xl font-normal uppercase tracking-[0.2em] text-black sm:text-4xl md:text-5xl">
+    <section className="bg-black py-16 sm:py-20">
+      <Container className="flex flex-col gap-8 text-white">
+        <h2 className="heading-font text-3xl font-normal uppercase tracking-[0.2em] sm:text-4xl md:text-5xl">
           FAQs
         </h2>
 
-        <div className="divide-y divide-black/15 border-t border-black/15">
+        <div className="divide-y divide-white/15 border-t border-white/15">
           {faqs.map((item, index) => {
             const isOpen = openIndex === index;
             return (
@@ -52,15 +52,15 @@ export function FaqSection() {
                 className="flex w-full flex-col text-left"
               >
                 <div className="flex items-center justify-between py-4 sm:py-5">
-                  <span className="heading-font text-sm font-normal uppercase tracking-[0.22em] text-black sm:text-base">
+                  <span className="heading-font text-sm font-normal uppercase tracking-[0.22em] sm:text-base">
                     {item.question}
                   </span>
-                  <span className="ml-4 text-lg text-black">
+                  <span className="ml-4 text-lg text-white">
                     {isOpen ? "▾" : "▸"}
                   </span>
                 </div>
                 {isOpen ? (
-                  <div className="pb-4 text-sm leading-relaxed text-black/80 sm:pb-5">
+                  <div className="pb-4 text-sm leading-relaxed text-white/80 sm:pb-5">
                     {item.answer}
                   </div>
                 ) : null}
@@ -68,8 +68,8 @@ export function FaqSection() {
             );
           })}
         </div>
-      </div>
-    </PeachBanner>
+      </Container>
+    </section>
   );
 }
 

@@ -1,38 +1,50 @@
 import Image from "next/image";
-import { Container } from "../ui/Container";
 
 const team = [
   {
-    id: "founder-logan",
+    id: "logan",
     name: "Logan",
-    role: "Founder",
+    role: "Head of Brand & Partnerships",
     image: "/images/logan.png",
   },
   {
-    id: "cofounder-brandan",
+    id: "brandan",
     name: "Brandan",
-    role: "Co-founder",
+    role: "Head of Community & Outreach",
     image: "/images/brandan.png",
   },
   {
-    id: "cofounder-dav",
+    id: "dav",
     name: "Dav",
-    role: "Co-founder",
+    role: "Head of Lifestyle & Apparel",
     image: "/images/dav.png",
+  },
+  {
+    id: "zane",
+    name: "Zane",
+    role: "Head of Product & Design",
+    image: "",
+  },
+  {
+    id: "dwight",
+    name: "Dwight",
+    role: "Creative Director",
+    image: "",
   },
 ];
 
 export function MeetTeamSection() {
   return (
     <section className="bg-white py-16 sm:py-20">
-      <Container className="flex flex-col gap-10">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="flex flex-col gap-10">
         <h2 className="heading-font text-center text-4xl font-normal uppercase tracking-[0.18em] text-black sm:text-5xl">
           Meet The Team
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid justify-items-center gap-x-3 gap-y-10 md:grid-cols-3 lg:grid-cols-5">
           {team.map((member) => (
             <div key={member.id} className="flex flex-col gap-4">
-              <div className="relative mx-auto aspect-square w-56 h-56 sm:w-64 sm:h-64 overflow-hidden rounded-full border border-black/10 bg-[#f5f5f5]">
+              <div className="relative mx-auto aspect-square h-56 w-56 overflow-hidden rounded-full border border-black/10 bg-[#f5f5f5] sm:h-60 sm:w-60 md:h-64 md:w-64 lg:h-52 lg:w-52 xl:h-56 xl:w-56">
                 {member.image ? (
                   <Image
                     src={member.image}
@@ -51,14 +63,15 @@ export function MeetTeamSection() {
                 <p className="text-lg font-semibold text-black sm:text-xl">
                   {member.name}
                 </p>
-                <p className="text-sm text-black/60 sm:text-base">
+                <p className="text-sm text-black/80 sm:text-base">
                   {member.role}
                 </p>
               </div>
             </div>
           ))}
         </div>
-      </Container>
+        </div>
+      </div>
     </section>
   );
 }
