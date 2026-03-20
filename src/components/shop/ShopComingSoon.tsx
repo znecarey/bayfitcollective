@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "../ui/Container";
 import { Button } from "../ui/Button";
+
+/** Shared preview art for coming-soon merch cards */
+const SHOP_PREVIEW_IMAGE = "/images/IMG_6230.png";
 
 const products = [
   {
@@ -11,10 +15,6 @@ const products = [
   {
     name: "BF Active Short Sleeve",
     description: "Lightweight short sleeve built for sweat and sessions.",
-  },
-  {
-    name: "Bay Fit Cap",
-    description: "Everyday cap for sun, sweat, and style on the go.",
   },
 ];
 
@@ -33,20 +33,31 @@ export function ShopComingSoon() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
           {products.map((product) => (
             <div
               key={product.name}
-              className="flex flex-col gap-3 rounded-2xl border border-black/10 bg-[#f8f8f8] px-5 py-6"
+              className="flex flex-col gap-4 rounded-lg border border-black/10 bg-[#f8f8f8] px-3 py-6 sm:px-4 sm:py-8"
             >
-              <div className="h-32 rounded-xl bg-gradient-to-br from-black/5 via-black/10 to-[--color-peach]/40" />
-              <div className="space-y-1">
-                <p className="text-sm font-semibold text-black">
+              {/* Taller preview: same card width as before, more vertical length (no max-height cap) */}
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md bg-black/5">
+                <Image
+                  src={SHOP_PREVIEW_IMAGE}
+                  alt={`${product.name} preview`}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(min-width: 640px) 40vw, 100vw"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <p className="text-xs font-semibold text-black">
                   {product.name}
                 </p>
-                <p className="text-xs text-black/70">{product.description}</p>
+                <p className="text-[10px] leading-relaxed text-black/70 sm:text-[11px]">
+                  {product.description}
+                </p>
               </div>
-              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-black/40">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-black/40">
                 Future drop
               </p>
             </div>

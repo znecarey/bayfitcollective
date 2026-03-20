@@ -23,13 +23,13 @@ const team = [
     id: "zane",
     name: "Zane",
     role: "Head of Product & Design",
-    image: "",
+    image: "/images/zanecarey.png",
   },
   {
     id: "dwight",
     name: "Dwight",
     role: "Creative Director",
-    image: "",
+    image: "/images/dwight.png",
   },
 ];
 
@@ -50,7 +50,11 @@ export function MeetTeamSection() {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className={
+                      member.id === "zane"
+                        ? "object-cover object-top origin-top scale-[0.98] translate-y-[5px]"
+                        : "object-cover"
+                    }
                     sizes="(min-width: 1024px) 240px, 50vw"
                   />
                 ) : (
