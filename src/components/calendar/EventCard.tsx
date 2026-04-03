@@ -65,32 +65,28 @@ export function EventCard({ event }: EventCardProps) {
   );
 }
 
-/** Prominent featured event card: flyer left, event info right. */
+/** Full-bleed featured band: 30% flyer (full image visible) / 70% title, meta, description, RSVP. */
 export function FeaturedEventCard({ event }: EventCardProps) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-md">
-      {/*
-        Exactly two columns on md+: ~25% flyer / ~75% copy.
-        Flyer uses object-contain + center so it scales to this column only — no empty “third zone” in the middle.
-      */}
-      <div className="grid w-full grid-cols-1 md:grid-cols-[1fr_3fr] md:items-stretch">
-        {/* Left: flyer (one grid track only) */}
-        <div className="relative min-h-[min(100vw,22rem)] min-w-0 w-full md:min-h-0 md:h-full">
+    <article className="w-full overflow-hidden rounded-none border-x-0 border-y border-black/10 bg-white shadow-none">
+      <div className="grid w-full grid-cols-1 md:grid-cols-[3fr_7fr] md:items-stretch">
+        {/* Left ~30%: full flyer, object-contain (letterboxing top/bottom as needed) */}
+        <div className="relative min-h-[min(100vw,20rem)] min-w-0 w-full bg-white md:min-h-0 md:h-full">
           {event.image ? (
             <Image
               src={event.image}
               alt=""
               fill
               className="object-contain object-center"
-              sizes="(min-width: 768px) 25vw, 100vw"
+              sizes="(min-width: 768px) 30vw, 100vw"
               priority
             />
           ) : (
             <div className="absolute inset-0 bg-[#f0f0f0]" />
           )}
         </div>
-        {/* Right: event info (second grid track only) */}
-        <div className="flex min-w-0 flex-col items-stretch justify-center gap-3 p-5 text-center sm:p-6">
+        {/* Right ~70%: title, details, description, CTA */}
+        <div className="flex min-w-0 flex-col items-stretch justify-center gap-3 px-6 py-8 text-center sm:px-10 sm:py-10 md:px-10 md:py-12 lg:px-14">
           <h2 className="heading-font w-full text-2xl font-normal uppercase tracking-[0.08em] text-black sm:text-3xl">
             {event.title}
           </h2>
@@ -98,7 +94,7 @@ export function FeaturedEventCard({ event }: EventCardProps) {
           <p className="w-full text-[17px] leading-[1.35] text-black/70">{event.timeLabel}</p>
           <p className="w-full text-[17px] leading-[1.35] text-black/70">{event.location}</p>
           {event.description ? (
-            <p className="mt-2 w-full max-w-full text-sm leading-relaxed text-black/80">
+            <p className="mt-2 w-full max-w-full whitespace-pre-line text-sm leading-relaxed text-black/80">
               {event.description}
             </p>
           ) : null}

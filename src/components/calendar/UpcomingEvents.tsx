@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Container } from "../ui/Container";
 import {
   calendarEvents,
@@ -12,13 +11,19 @@ const upcoming = calendarEvents.filter((e) => e.id !== featuredEventId);
 export function UpcomingEvents() {
   return (
     <section className="bg-white py-14 sm:py-20">
-      <Container className="flex flex-col gap-12">
-        {featured ? (
-          <div id="featured-event" className="scroll-mt-6">
-            <FeaturedEventCard event={featured} />
-          </div>
-        ) : null}
+      {/* Featured band: ~100px from viewport edges on md+; tighter padding on small screens */}
+      {featured ? (
+        <div
+          id="featured-event"
+          className="scroll-mt-6 w-full px-4 sm:px-8 md:px-[100px]"
+        >
+          <FeaturedEventCard event={featured} />
+        </div>
+      ) : null}
 
+      <Container
+        className={`flex flex-col gap-12 ${featured ? "mt-12 sm:mt-16" : ""}`}
+      >
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2 className="heading-font text-xl font-normal uppercase tracking-[0.18em] text-black sm:text-2xl">
@@ -39,7 +44,6 @@ export function UpcomingEvents() {
             ))}
           </div>
         </div>
-
       </Container>
     </section>
   );

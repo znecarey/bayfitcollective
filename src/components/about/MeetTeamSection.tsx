@@ -1,6 +1,30 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 
-const team = [
+export type TeamMember = {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  /**
+   * Zoom: `1` = default. Above 1 zooms in (tighter crop); below 1 zooms out (more context).
+   */
+  photoZoom?: number;
+  /**
+   * Rotation in degrees. Positive = clockwise, negative = counter-clockwise.
+   */
+  photoRotateDeg?: number;
+  /** Vertical nudge in px. Positive moves the image down inside the circle. */
+  photoTranslateYPx?: number;
+  /** Horizontal nudge in px. Positive moves the image right. */
+  photoTranslateXPx?: number;
+  /** Tailwind `object-*` utilities, e.g. `object-top`, `object-center`. */
+  photoObjectClass?: string;
+  /** CSS `transform-origin` (e.g. `center`, `top center`). */
+  photoTransformOrigin?: string;
+};
+
+const team: TeamMember[] = [
   {
     id: "logan",
     name: "Logan",
@@ -11,7 +35,9 @@ const team = [
     id: "brandan",
     name: "Brandan",
     role: "Head of Community & Outreach",
-    image: "/images/brandan.png",
+    image: "/images/brandan1.png",
+    photoZoom: 1.5,
+    photoTranslateYPx: -10,
   },
   {
     id: "dav",
@@ -23,15 +49,45 @@ const team = [
     id: "zane",
     name: "Zane",
     role: "Head of Product & Design",
-    image: "/images/zanecarey.png",
+    image: "/images/zane1.png",
+    photoZoom: 1.11,
+    photoTranslateYPx: 10,
+    photoObjectClass: "object-center",
   },
   {
     id: "dwight",
     name: "Dwight",
     role: "Creative Director",
     image: "/images/dwight.png",
+    photoObjectClass: "object-top",
   },
 ];
+
+function teamPhotoStyle(member: TeamMember): CSSProperties {
+  const zoom = member.photoZoom ?? 1;
+  const deg = member.photoRotateDeg ?? 0;
+  const ty = member.photoTranslateYPx ?? 0;
+  const tx = member.photoTranslateXPx ?? 0;
+  const hasTransform =
+    zoom !== 1 || deg !== 0 || tx !== 0 || ty !== 0;
+
+  const style: CSSProperties = {};
+  if (member.photoTransformOrigin) {
+    style.transformOrigin = member.photoTransformOrigin;
+  }
+  if (hasTransform) {
+    const parts: string[] = [];
+    if (tx !== 0 || ty !== 0) {
+      parts.push(`translate(${tx}px, ${ty}px)`);
+    }
+    parts.push(`scale(${zoom})`);
+    if (deg !== 0) {
+      parts.push(`rotate(${deg}deg)`);
+    }
+    style.transform = parts.join(" ");
+  }
+  return style;
+}
 
 export function MeetTeamSection() {
   return (
@@ -50,11 +106,8 @@ export function MeetTeamSection() {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className={
-                      member.id === "zane"
-                        ? "object-cover object-top origin-top scale-[0.98] translate-y-[5px]"
-                        : "object-cover"
-                    }
+                    className={`object-cover ${member.photoObjectClass ?? "object-center"}`}
+                    style={teamPhotoStyle(member)}
                     sizes="(min-width: 1024px) 240px, 50vw"
                   />
                 ) : (
@@ -79,4 +132,3 @@ export function MeetTeamSection() {
     </section>
   );
 }
-

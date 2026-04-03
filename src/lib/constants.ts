@@ -42,7 +42,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: "FAQs",
-    href: "/#faqs",
+    href: "/about#faqs",
   },
 ];
 

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Container } from "../ui/Container";
-import { BRAND_MOTTO } from "@/lib/constants";
 
 export function AboutSection() {
   return (

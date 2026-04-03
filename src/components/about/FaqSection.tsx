@@ -35,7 +35,10 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-black py-16 sm:py-20">
+    <section
+      id="faqs"
+      className="scroll-mt-24 bg-black py-16 sm:py-20"
+    >
       <Container className="flex flex-col gap-8 text-white">
         <h2 className="heading-font text-3xl font-normal uppercase tracking-[0.2em] sm:text-4xl md:text-5xl">
           FAQs
