@@ -25,29 +25,26 @@ export type CalendarEvent = {
 };
 
 /** ID of the event to feature in the hero-style card. */
-export const featuredEventId = "1";
+export const featuredEventId = "2";
 
 export const calendarEvents: CalendarEvent[] = [
   {
-    id: "1",
-    title: "Txnedef Fitness Market Q2",
-    dateLabel: "Saturday, April 4, 2026",
-    timeLabel: "10:00am - 2:00pm PST",
-    location: "Pacific Pipe, 2140 Mandela Pkwy, Oakland, CA 94607",
-    description:
-      "We're bringing the community together on April 4th, 2026 for a high-energy day of movement, music, and connection! From run clubs and gym pop-ups to yoga flows and outdoor collectives, this is where fitness meets culture!\n\nThere will be two 30-minute classes, with a 10-minute break in between to allow folks time to transition to the next class.\n\nCompetitions + giveaways! Txnedef drinks + food vendors on site. @Phive.55 running the sound.\n\nFirst come, first served when it comes to classes! Reveal coming soon!\n\nPull up ready to vibe, network and tap in with the city's dopest wellness communities. Come ready to meet new people, make real connections, and build your fitness circle!",
-    image: "/images/txnedef-fitness-market-q2.png",
-    href: "https://partiful.com/e/wjvuYdt7dPp5AAWMjJqK",
-  },
-  {
     id: "2",
-    title: "Night Shift w/ Get Bent Training",
+    title: "The Night Shift",
     dateLabel: "Friday, April 25",
     timeLabel: "5:00pm - 8:00pm PST",
     location: "2341 San Pablo Ave, Oakland CA 94612",
-    description: "An evening session with Get Bent Training. Move, connect, and level up.",
-    image: "/images/night-shift-425-1.jpg",
-    href: "",
+    description: `When the sun goes down, we clock in. 🌅
+
+The Night Shift is pulling up to Get Bent Training for a HIIT + Circuit Workout built to move the community, bring the energy, and set the tone for the season.
+
+Expect fuel, a live DJ set, vendors, and nothing but good people and good vibes.
+
+RSVP required. Early arrival highly encouraged.
+
+#TogetherWeClimb`,
+    image: "/images/Night%20shift%204.25%20-%202.PNG",
+    href: "https://partiful.com/e/TcmQLkcopQVzAtEArbc6?source=share&c=Crcnz4EW",
   },
   {
     id: "3",

@@ -1,58 +1,116 @@
-import type { CSSProperties } from "react";
 import Image from "next/image";
 
 /**
- * Partnership banner vertical padding (px), applied to top AND bottom of the inner row.
- * This always changes how tall the strip feels (unlike min-height, which cannot shrink
- * below the logos + text).
- *
- * Optional: set a minimum total block height — only adds space when content is shorter.
+ * Partnership banner: extra vertical padding makes the strip taller than the original
+ * 8px×2 era, while the logo row stays locked to the pre–extra-logos size (40px assets).
  */
-const PARTNERSHIP_BANNER_PADDING_Y_PX = 8;
-const PARTNERSHIP_BANNER_MIN_HEIGHT_PX: number | undefined = undefined; // e.g. 112 to force a taller band
+const PARTNERSHIP_BANNER_PADDING_Y_PX = 20;
+/** Logo row height — matches original `height={40}` / `h-10` partner strip before more brands. */
+const PARTNERSHIP_LOGO_ROW_HEIGHT_PX = 40;
+
+const PARTNER_LOGOS = [
+  "/images/partner1 copy.png",
+  "/images/partner2 copy.png",
+  "/images/partner3 copy.png",
+  "/images/partner4 copy.png",
+  "/images/partner5 copy.png",
+  "/images/partner6 copy.png",
+  "/images/GU.png",
+  "/images/JollofKitchen.png",
+  "/images/Kalos_Branding_V1_Text_DarkBlue.png",
+  "/images/oakland_spiders.png",
+  "/images/Rush%20Oakland%20Logo.png",
+  "/images/Berkeley.png",
+] as const;
+
+/**
+ * Per-logo scale inside the fixed 110×40 slot (overflow clipped when scale > 1).
+ * Omitted paths render at 1:1.
+ */
+const PARTNER_LOGO_SCALE_BY_SRC: Record<string, number> = {
+  "/images/partner1 copy.png": 1.80,
+  "/images/partner2 copy.png": 1.28,
+  "/images/partner4 copy.png": 1.72,
+  "/images/partner5 copy.png": 1.32,
+  "/images/JollofKitchen.png": 1.62,
+  "/images/Berkeley.png": 1.72,
+  "/images/Oakland_Spiders.png": 1.52,
+  "/images/Rush_Oakland_Logo.png": 2,
+};
+
+/** Pulls the slot 2px toward neighbors on each side (tighter gap next to these logos). */
+const PARTNER_LOGO_TIGHT_SPACING_SRC = new Set<string>([
+  "/images/partner5 copy.png",
+  "/images/partner4 copy.png",
+  "/images/partner1 copy.png",
+  "/images/JollofKitchen.png",
+  "/images/Berkeley.png",
+]);
+
+function PartnerBannerLogo({ src }: { src: string }) {
+  const scale = PARTNER_LOGO_SCALE_BY_SRC[src] ?? 1;
+  const tightSpacing = PARTNER_LOGO_TIGHT_SPACING_SRC.has(src);
+  const zoomed = scale > 1;
+
+  const image = (
+    <Image
+      src={src}
+      alt="Bay Fit partner logo"
+      width={110}
+      height={40}
+      className="h-10 w-[110px] shrink-0 origin-center object-contain"
+      style={zoomed ? { transform: `scale(${scale})` } : undefined}
+    />
+  );
+
+  if (zoomed) {
+    return (
+      <span
+        className={`flex h-10 w-[110px] shrink-0 items-center justify-center overflow-hidden ${tightSpacing ? "-mx-[2px]" : ""}`}
+      >
+        {image}
+      </span>
+    );
+  }
+
+  if (tightSpacing) {
+    return (
+      <span className="block h-10 w-[110px] shrink-0 -mx-[2px]">{image}</span>
+    );
+  }
+
+  return image;
+}
 
 export function SocialSection() {
-  const partnershipBannerStyle: CSSProperties = {
-    ...(PARTNERSHIP_BANNER_MIN_HEIGHT_PX != null
-      ? { minHeight: `${PARTNERSHIP_BANNER_MIN_HEIGHT_PX}px` }
-      : {}),
-  };
-
   return (
     <section className="-mt-px w-full bg-white text-black">
       {/* Partnerships banner directly under \"TOGETHER. WE. CLIMB.\" */}
-      <div
-        className="flex items-center border-b border-black/10 bg-[#ffffff]"
-        style={partnershipBannerStyle}
-      >
+      <div className="flex items-center border-b border-black/10 bg-[#ffffff]">
         <div
-          className="mx-auto flex w-full max-w-9xl flex-col flex-wrap items-center justify-center gap-4 px-6 sm:flex-row sm:justify-between sm:gap-8"
+          className="mx-auto flex w-full max-w-9xl flex-col items-center justify-center gap-4 px-6 sm:flex-row sm:justify-between sm:gap-8"
           style={{
             paddingTop: PARTNERSHIP_BANNER_PADDING_Y_PX,
             paddingBottom: PARTNERSHIP_BANNER_PADDING_Y_PX,
           }}
         >
-          <p className="heading-font translate-x-[60px] translate-y-[5px] text-center text-sm font-normal uppercase tracking-[0.1em] text-black sm:shrink-0 sm:text-left md:text-base">
+          <p className="heading-font w-full translate-x-[60px] translate-y-[5px] text-center text-sm font-normal uppercase tracking-[0.1em] text-black sm:w-auto sm:shrink-0 sm:text-left md:text-base">
             <em className="italic">Built with brands that move with us</em>
           </p>
-          <div className="flex flex-1 flex-wrap items-center justify-center gap-8 sm:gap-10">
-            {[
-              "/images/partner1 copy.png",
-              "/images/partner2 copy.png",
-              "/images/partner3 copy.png",
-              "/images/partner4 copy.png",
-              "/images/partner5 copy.png",
-              "/images/partner6 copy.png",
-            ].map((src) => (
-              <Image
-                key={src}
-                src={src}
-                alt="Bay Fit partner logo"
-                width={110}
-                height={40}
-                className="object-contain"
-              />
-            ))}
+          <div
+            className="partners-marquee ml-[35px] min-w-0 w-full flex-1 shrink-0 sm:w-auto"
+            style={{
+              height: PARTNERSHIP_LOGO_ROW_HEIGHT_PX,
+              maxHeight: PARTNERSHIP_LOGO_ROW_HEIGHT_PX,
+            }}
+          >
+            <div className="partners-marquee-track h-full gap-8 sm:gap-10">
+              {[0, 1].map((dup) =>
+                PARTNER_LOGOS.map((src) => (
+                  <PartnerBannerLogo key={`${dup}-${src}`} src={src} />
+                )),
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -58,3 +58,35 @@ body {
   animation-play-state: paused;
 }
 
+/* Partnership logos: single horizontal row, infinite scroll */
+@keyframes partners-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partners-marquee {
+  overflow: hidden;
+}
+
+.partners-marquee-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  align-items: center;
+  animation: partners-marquee 55s linear infinite;
+}
+
+.partners-marquee:hover .partners-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee-track {
+    animation: none;
+  }
+}
+
