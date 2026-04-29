@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
   },
   images: {
     qualities: [75, 95],
+    /**
+     * Allow optimized local assets under `/public/images/**`.
+     * Omitting `search` permits optional cache-busting query strings like `?v=...`
+     * used by `MeetTeamSection` without disabling `next/image`.
+     */
+    localPatterns: [{ pathname: "/images/**" }],
     remotePatterns: [
       {
         protocol: "https",

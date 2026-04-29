@@ -30,21 +30,23 @@ export const featuredEventId = "2";
 export const calendarEvents: CalendarEvent[] = [
   {
     id: "2",
-    title: "The Night Shift",
-    dateLabel: "Friday, April 25",
-    timeLabel: "5:00pm - 8:00pm PST",
-    location: "2341 San Pablo Ave, Oakland CA 94612",
-    description: `When the sun goes down, we clock in. 🌅
+    title: "The Climb!",
+    dateLabel: "Saturday, May 2",
+    timeLabel: "9:00am - 11:30am PST",
+    location: "Cleveland Cascades — 2300 Lakeshore Ave, Oakland, CA 94606",
+    description: `The Climb!
 
-The Night Shift is pulling up to Get Bent Training for a HIIT + Circuit Workout built to move the community, bring the energy, and set the tone for the season.
+🔥 We’re taking the grind outside!
 
-Expect fuel, a live DJ set, vendors, and nothing but good people and good vibes.
+Bay Fit Co. x Gods Gym are linking up for an OUTDOOR CIRCUIT like no other. If you’ve been waiting for a sign to push yourself this is it.
 
-RSVP required. Early arrival highly encouraged.
+Saturday, May 2nd • 9AM — 11:30AM
 
-#TogetherWeClimb`,
-    image: "/images/Night%20shift%204.25%20-%202.PNG",
-    href: "https://partiful.com/e/TcmQLkcopQVzAtEArbc6?source=share&c=Crcnz4EW",
+Light refreshments will be provided.
+
+RSVP to Lock in Your Spot!`,
+    image: "/images/the-climb-flyer.png",
+    href: "https://partiful.com/e/b0hSNfMHjeK8OIGM8OqJ?source=share",
   },
   {
     id: "3",
