@@ -30,23 +30,24 @@ export const featuredEventId = "2";
 export const calendarEvents: CalendarEvent[] = [
   {
     id: "2",
-    title: "The Climb!",
-    dateLabel: "Saturday, May 2",
-    timeLabel: "9:00am - 11:30am PST",
-    location: "Cleveland Cascades — 2300 Lakeshore Ave, Oakland, CA 94606",
-    description: `The Climb!
+    title: "The Reset: Wellness & Recovery Social",
+    dateLabel: "Saturday, May 30, 2026",
+    timeLabel: "9:00am - 12:00pm PDT",
+    location:
+      "Longfellow Fields — 3884 Martin Luther King Jr Way, Oakland, CA 94609",
+    description: `The Reset is bringing a full morning of movement, recovery, music, food, vendors, and community to Longfellow Fields.
 
-🔥 We’re taking the grind outside!
+Come stretch, sweat, recover, connect, and catch a vibe with us.
 
-Bay Fit Co. x Gods Gym are linking up for an OUTDOOR CIRCUIT like no other. If you’ve been waiting for a sign to push yourself this is it.
+🗓️ May 30 | 9AM–12PM
+📍 Longfellow Fields, Oakland
+🎧 Sounds by DJ Red Corvette & Mix Z
 
-Saturday, May 2nd • 9AM — 11:30AM
+Pull up ready to move. Leave feeling recharged.
 
-Light refreshments will be provided.
-
-RSVP to Lock in Your Spot!`,
-    image: "/images/the-climb-flyer.png",
-    href: "https://partiful.com/e/b0hSNfMHjeK8OIGM8OqJ?source=share",
+#BayFitCollective #TheReset #OaklandEvents #BayAreaWellness #BayAreaFitness #TogetherWeClimb`,
+    image: "/images/the-reset-wellness-social.png",
+    href: "https://sweatpals.com/event/wellness-social?utm_source=user_share_3ca93df3-c3bf-49dc-be96-1ac78630f5cd&utm_medium=shared_link&utm_campaign=event_share",
   },
   {
     id: "3",
@@ -55,7 +56,7 @@ RSVP to Lock in Your Spot!`,
     timeLabel: "10:00am - 12:00pm PST",
     location: "900 Fallon St, Oakland CA 94607",
     description: "Community workout and handoff. All levels welcome.",
-    image: "/images/about-4.png",
+    image: "/images/the-handoff-track-day.png",
     href: "",
   },
 ];
