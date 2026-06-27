@@ -22,32 +22,27 @@ export type CalendarEvent = {
   image?: string;
   /** External RSVP link (Partiful, Strava, SweatPals, etc.). Opens in new tab. */
   href?: string;
+  /** When true, upcoming card shows only the RSVP control (no title/date/time/location). */
+  hideCardDetails?: boolean;
+  /** Scale multiplier for the featured flyer image (e.g. 1.45 zooms in for readability). */
+  featuredFlyerZoom?: number;
 };
 
 /** ID of the event to feature in the hero-style card. */
-export const featuredEventId = "2";
+export const featuredEventId = "4";
 
 export const calendarEvents: CalendarEvent[] = [
   {
-    id: "2",
-    title: "The Reset: Wellness & Recovery Social",
-    dateLabel: "Saturday, May 30, 2026",
-    timeLabel: "9:00am - 12:00pm PDT",
-    location:
-      "Longfellow Fields — 3884 Martin Luther King Jr Way, Oakland, CA 94609",
-    description: `The Reset is bringing a full morning of movement, recovery, music, food, vendors, and community to Longfellow Fields.
-
-Come stretch, sweat, recover, connect, and catch a vibe with us.
-
-🗓️ May 30 | 9AM–12PM
-📍 Longfellow Fields, Oakland
-🎧 Sounds by DJ Red Corvette & Mix Z
-
-Pull up ready to move. Leave feeling recharged.
-
-#BayFitCollective #TheReset #OaklandEvents #BayAreaWellness #BayAreaFitness #TogetherWeClimb`,
-    image: "/images/the-reset-wellness-social.png",
-    href: "https://sweatpals.com/event/wellness-social?utm_source=user_share_3ca93df3-c3bf-49dc-be96-1ac78630f5cd&utm_medium=shared_link&utm_campaign=event_share",
+    id: "4",
+    title: "SF Fit Fest",
+    dateLabel: "Saturday, June 27",
+    timeLabel: "10:00am - 4:00pm PST",
+    location: "The Crossing at East Cut, 250 Main St, SF",
+    description:
+      "Workouts, recovery, festival DJs, and World Cup watch party at OTT's flagship outdoor fitness festival.",
+    image: "/images/sf-fit-fest.png",
+    href: "https://www.overthetopxp.com/sffitfest",
+    featuredFlyerZoom: 1.5,
   },
   {
     id: "3",
@@ -58,5 +53,6 @@ Pull up ready to move. Leave feeling recharged.
     description: "Community workout and handoff. All levels welcome.",
     image: "/images/the-handoff-track-day.png",
     href: "",
+    hideCardDetails: true,
   },
 ];

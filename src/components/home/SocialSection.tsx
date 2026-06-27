@@ -34,8 +34,8 @@ const PARTNER_LOGO_SCALE_BY_SRC: Record<string, number> = {
   "/images/partner5 copy.png": 1.32,
   "/images/JollofKitchen.png": 1.62,
   "/images/Berkeley.png": 1.72,
-  "/images/Oakland_Spiders.png": 1.52,
-  "/images/Rush_Oakland_Logo.png": 2,
+  "/images/oakland_spiders.png": 1.52,
+  "/images/Rush%20Oakland%20Logo.png": 2,
 };
 
 /** Pulls the slot 2px toward neighbors on each side (tighter gap next to these logos). */
