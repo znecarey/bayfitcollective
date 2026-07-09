@@ -29,30 +29,19 @@ export type CalendarEvent = {
 };
 
 /** ID of the event to feature in the hero-style card. */
-export const featuredEventId = "4";
+export const featuredEventId = "3";
 
 export const calendarEvents: CalendarEvent[] = [
   {
-    id: "4",
-    title: "SF Fit Fest",
-    dateLabel: "Saturday, June 27",
-    timeLabel: "10:00am - 4:00pm PST",
-    location: "The Crossing at East Cut, 250 Main St, SF",
-    description:
-      "Workouts, recovery, festival DJs, and World Cup watch party at OTT's flagship outdoor fitness festival.",
-    image: "/images/sf-fit-fest.png",
-    href: "https://www.overthetopxp.com/sffitfest",
-    featuredFlyerZoom: 1.5,
-  },
-  {
     id: "3",
     title: "The Handoff",
-    dateLabel: "Friday, May 9",
-    timeLabel: "10:00am - 12:00pm PST",
-    location: "900 Fallon St, Oakland CA 94607",
-    description: "Community workout and handoff. All levels welcome.",
+    dateLabel: "Saturday, July 18",
+    timeLabel: "5:30pm - 8:30pm PDT",
+    location: "Laney College Track, 900 Fallon St, Oakland CA 94607",
+    description:
+      "Community relay running event hosted by Bay Fit Collective in partnership with Unseen Run Club and Renegade Running.",
     image: "/images/the-handoff-track-day.png",
-    href: "",
-    hideCardDetails: true,
+    href: "https://events.sweatpals.com/4d355d48",
+    featuredFlyerZoom: 1.5,
   },
 ];
