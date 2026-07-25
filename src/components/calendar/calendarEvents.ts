@@ -29,19 +29,19 @@ export type CalendarEvent = {
 };
 
 /** ID of the event to feature in the hero-style card. */
-export const featuredEventId = "3";
+export const featuredEventId = "5";
 
 export const calendarEvents: CalendarEvent[] = [
   {
-    id: "3",
-    title: "The Handoff",
-    dateLabel: "Saturday, July 18",
-    timeLabel: "5:30pm - 8:30pm PDT",
-    location: "Laney College Track, 900 Fallon St, Oakland CA 94607",
+    id: "5",
+    title: "The Night Shift",
+    dateLabel: "Saturday, August 8",
+    timeLabel: "5:00pm - 8:00pm PDT",
+    location: "1668 14th St, Oakland CA 94607",
     description:
-      "Community relay running event hosted by Bay Fit Collective in partnership with Unseen Run Club and Renegade Running.",
-    image: "/images/the-handoff-track-day.png",
-    href: "https://events.sweatpals.com/4d355d48",
+      "Fuel, music, and vendors — 1 mile warm up + HIIT circuit. Powered by Bay Fit Collective & Fitnesse Training Club.",
+    image: "/images/the-night-shift.png",
+    href: "https://sweatpals.com/event/night-shift-815/2026-08-08",
     featuredFlyerZoom: 1.5,
   },
 ];
